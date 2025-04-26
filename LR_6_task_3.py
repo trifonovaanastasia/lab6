@@ -22,19 +22,19 @@ print(f"NumPy version: {np_version}")
 
 # Якщо NumPy > 2.0, то ставимо потрібну
 if int(np_version.split('.')[0]) >= 2:
-    print("⚙️ Downgrading NumPy to 1.26.4 for neurolab compatibility...")
+    print("Downgrading NumPy to 1.26.4 for neurolab compatibility...")
     install('numpy==1.26.4')
-    print("✅ NumPy downgraded. Please restart runtime manually: Runtime → Restart Runtime")
-    raise SystemExit("⏹️ STOP. Restart runtime and run this cell again!")
+    print(" NumPy downgraded. Please restart runtime manually: Runtime → Restart Runtime")
+    raise SystemExit("STOP. Restart runtime and run this cell again!")
 
 # Встановлюємо neurolab, якщо ще не встановлено
 try:
     import neurolab as nl
 except ImportError:
-    print("⚙️ Installing neurolab...")
+    print("Installing neurolab...")
     install('git+https://github.com/zueve/neurolab.git')
     import neurolab as nl
-    print("✅ neurolab installed!")
+    print("neurolab installed!")
 
 # --- Власне код завдання ---
 
